@@ -1,0 +1,57 @@
+POST http://localhost:3000/users/add
+Content-Type: application/json
+
+{
+    "userName":"Joachim", 
+    "password":"Password123"
+}
+
+###
+
+POST http://localhost:3000/schedule/add
+Content-Type: application/json
+
+{
+    "title":"Title of the Opera", 
+    "when":"September-October 2020",
+    "where":"Sydney Opera House",
+    "conductor":"Waving Astick",
+    "role":"Don José",
+    "read_more":"http://theTicketSalesList", 
+    "date_remove":"2020-11-01",
+    "repetoire":"Opera",
+    "composer":"Georges Bizet",
+    "opera":"Carmen",
+    "display_repetoire":true
+
+}
+
+###
+
+POST http://localhost:3000/schedule/add
+Content-Type: application/json
+
+{
+    "title":"Title of the music piece", 
+    "when":"September-October 2021",
+    "where":"At the Swedish king's house",
+    "conductor":"Waving Astick",
+    "role":"Don José",
+    "read_more":"http://theTicketSalesList", 
+    "date_remove":"2020-11-01",
+    "repetoire":"Concert",
+    "composer":"Verdi",
+    "work":"Requiem",
+    "display_repetoire":false
+  
+
+}
+
+###
+
+POST http://localhost:3000/schedule/delete
+Content-Type: application/json
+
+{
+    "_id":"63bacd3d42702d4b0978c4ae"
+}
