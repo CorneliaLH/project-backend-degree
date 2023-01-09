@@ -7,11 +7,12 @@ router.get('/', function(req, res, next) {
     req.app.locals.db.collection("schedule").find().toArray().then(
       results => {
         console.log(results)
+    res.send(results);
+
       }
     )
   
   
-    res.send('Schedule is WORKING! FINEEEE!!');
   });
 
   //Create new schedule post
@@ -23,6 +24,7 @@ router.get('/', function(req, res, next) {
     when:req.body.when,
     where:req.body.where,
     conductor:req.body.conductor,
+    image_url:req.body.image_url,
     read_more:req.body.read_more,
     date_remove:req.body.date_remove
 
@@ -44,6 +46,7 @@ router.get('/', function(req, res, next) {
                 
                     ).then(result=>{
                       console.log(result)
+                      res.send(result)
                     })
 
     ////If scheduled post is a Concert, an opera-repetoire post is created     
@@ -58,7 +61,7 @@ router.get('/', function(req, res, next) {
                 }
                 
                     ).then(result=>{
-                      console.log(result)
+                      res.send(result)
                     })
         }
       console.log(result)

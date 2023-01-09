@@ -6,8 +6,13 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var scheduleRouter = require('./routes/schedule');
+var mediaRouter = require('./routes/media');
+let cors = require("cors");
+
+
 
 var app = express();
+app.use(cors());
 
 const MongoClient = require("mongodb").MongoClient;
 MongoClient.connect("mongodb://127.0.0.1:27017", {
@@ -28,5 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/schedule', scheduleRouter);
+app.use('/media', mediaRouter);
 
 module.exports = app;

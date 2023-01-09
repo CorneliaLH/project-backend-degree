@@ -9,8 +9,6 @@ router.get('/', function(req, res, next) {
       console.log(results)
     }
   )
-
-
   res.send('USERS WORKING! FINEEEE!!');
 });
 
@@ -20,5 +18,20 @@ router.post("/add", function(req,res) {
     res.redirect("/show")
   })
 })
+
+router.post("/login", async function (req, res) {
+  //hämtar användare, om den inte finns error
+  let user = await req.app.locals.db
+    .collection("useradmin")
+    .findOne({ userName: req.body.userName})
+    .then((results) => {
+      return results;
+    });
+  if (user === null) {
+    res.json({ status: "error", message: "Användare finns inte" });
+    return;} else {
+      res.json({ status: "ok"})
+    }
+  })
 
 module.exports = router;

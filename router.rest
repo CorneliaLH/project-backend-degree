@@ -8,6 +8,16 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "userName":"Joachim", 
+    "password":"Password123"
+}
+
+###
+
 POST http://localhost:3000/schedule/add
 Content-Type: application/json
 
@@ -17,6 +27,7 @@ Content-Type: application/json
     "where":"Sydney Opera House",
     "conductor":"Waving Astick",
     "role":"Don José",
+    "image_url":"http://image.se",
     "read_more":"http://theTicketSalesList", 
     "date_remove":"2020-11-01",
     "repetoire":"Opera",
@@ -37,6 +48,7 @@ Content-Type: application/json
     "where":"At the Swedish king's house",
     "conductor":"Waving Astick",
     "role":"Don José",
+    "image_url":"http://image.se",
     "read_more":"http://theTicketSalesList", 
     "date_remove":"2020-11-01",
     "repetoire":"Concert",
@@ -55,3 +67,18 @@ Content-Type: application/json
 {
     "_id":"63bacd3d42702d4b0978c4ae"
 }
+
+###
+
+POST http://localhost:3000/media/add
+Content-Type: application/json
+
+{
+  "title":"Name of News, video or audio", 
+  "description":"Croissant gingerbread gummi bears icing cookie croissant shortbread. Bonbon lollipop jujubes gingerbread bear claw bear claw muffin lollipop brownie. Cheesecake candy canes caramels marzipan bear claw icing topping donut tart. Candy macaroon bonbon danish jelly-o ice cream muffin ice cream muffin.",
+  "type":"News/Video/Audio",
+  "media_url":"http://linkto.com",
+  "date_pub":"Date"
+}
+
+###
