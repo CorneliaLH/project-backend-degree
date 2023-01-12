@@ -11,11 +11,46 @@ router.get("/", function (req, res, next) {
       let today = new Date();
       let futureArray = [];
 
-      for (let i = 0; i < results.length; i++) {
-        let dateFromDB = new Date(results[i].date_remove);
+      let sortedArray = results.sort(function compare(a, b) {
+        var dateA = new Date(a.date_remove);
+        var dateB = new Date(b.date_remove);
+        return dateA - dateB;
+      });
+
+      for (let i = 0; i < sortedArray.length; i++) {
+        let dateFromDB = new Date(sortedArray[i].date_remove);
+        if (dateFromDB >= today) {
+          if (futureArray.length < 3) {
+            futureArray.push(sortedArray[i]);
+          }
+        }
+      }
+
+      res.send(futureArray);
+    });
+});
+
+router.get("/all", function (req, res, next) {
+  req.app.locals.db
+    .collection("schedule")
+    .find()
+    .toArray()
+    .then((results) => {
+      let today = new Date();
+      let futureArray = [];
+
+      let sortedArray = results.sort(function compare(a, b) {
+        var dateA = new Date(a.date_remove);
+        var dateB = new Date(b.date_remove);
+        return dateA - dateB;
+      });
+
+      for (let i = 0; i < sortedArray.length; i++) {
+        let dateFromDB = new Date(sortedArray[i].date_remove);
         if (dateFromDB >= today) {
           console.log(dateFromDB);
-          futureArray.push(results[i]);
+
+          futureArray.push(sortedArray[i]);
         }
       }
 

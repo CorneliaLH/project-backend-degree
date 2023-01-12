@@ -23,13 +23,13 @@ Content-Type: application/json
 
 {
     "title":"Title of the Opera", 
-    "when":"September-October 2020",
+    "when":"Maj-Juni 2025",
     "where":"Sydney Opera House",
     "conductor":"Waving Astick",
     "role":"Don José",
     "image_url":"http://image.se",
     "read_more":"http://theTicketSalesList", 
-    "date_remove":"2023-11-10",
+    "date_remove":"2029-06-20",
     "repetoire":"Opera",
     "composer":"Georges Bizet",
     "opera":"Carmen",
@@ -44,17 +44,17 @@ Content-Type: application/json
 
 {
     "title":"Title of the music piece", 
-    "when":"September-October 2021",
+    "when":"October-December 2026",
     "where":"At the Swedish king's house",
     "conductor":"Waving Astick",
     "role":"Don José",
     "image_url":"http://image.se",
     "read_more":"http://theTicketSalesList", 
-    "date_remove":"2023-12-15",
+    "date_remove":"2020-12-19",
     "repetoire":"Concert",
     "composer":"Verdi",
     "work":"Requiem",
-    "display_repetoire":false
+    "display_repetoire":true
   
 
 }
@@ -75,10 +75,13 @@ Content-Type: application/json
 
 {
   "title":"Name of News, video or audio", 
-  "description":"Croissant gingerbread gummi bears icing cookie croissant shortbread. Bonbon lollipop jujubes gingerbread bear claw bear claw muffin lollipop brownie. Cheesecake candy canes caramels marzipan bear claw icing topping donut tart. Candy macaroon bonbon danish jelly-o ice cream muffin ice cream muffin.",
-  "type":"News/Video/Audio",
-  "media_url":"http://linkto.com",
-  "date_pub":"Date"
+  "description":"Croissant gingerbread gummi bears icing cookie croissant shortbread. Bonbon lollipop jujubes gingerbread bear claw bear claw muffin lollipop brownie.",
+  "type":"Video",
+  "media_url":"https://www.youtube.com/embed/H-v8C991iAo",
+  "date_pub":"2023-02-17"
 }
 
 ###
+
+GET http://localhost:3000/repertoire/concert
+Content-Type: application/json
