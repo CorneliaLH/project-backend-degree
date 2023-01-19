@@ -8,15 +8,20 @@ var usersRouter = require("./routes/users");
 var scheduleRouter = require("./routes/schedule");
 var mediaRouter = require("./routes/media");
 var repertoireRouter = require("./routes/repertoire");
+require("dotenv").config();
 let cors = require("cors");
 
 var app = express();
 app.use(cors());
 
 const MongoClient = require("mongodb").MongoClient;
-MongoClient.connect("mongodb://127.0.0.1:27017", {
-  useUnifiedTopology: true,
-}).then((client) => {
+MongoClient.connect(
+  // "mongodb://127.0.0.1:27017"
+  process.env.MONGO_ATLAS_LINK,
+  {
+    useUnifiedTopology: true,
+  }
+).then((client) => {
   console.log("Vi är uppkopplade mot databasen!");
 
   const db = client.db("degreeProjectJoachim");

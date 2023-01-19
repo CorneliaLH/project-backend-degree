@@ -3,7 +3,8 @@ Content-Type: application/json
 
 {
     "userName":"Joachim", 
-    "password":"Password123"
+    "password":"Password123",
+    "userId":"VR3CluW_L7WZJac17sdfBn6"
 }
 
 ###
@@ -12,8 +13,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "userName":"Joachim", 
-    "password":"Password123"
+    "userName":"seb", 
+    "password":"seb"
 }
 
 ###
@@ -29,11 +30,11 @@ Content-Type: application/json
     "role":"Don José",
     "image_url":"http://image.se",
     "read_more":"http://theTicketSalesList", 
-    "date_remove":"2029-06-20",
+    "date_remove":"2024-06-20",
     "repetoire":"Opera",
     "composer":"Georges Bizet",
     "opera":"Carmen",
-    "display_repetoire":true
+    "display_repetoire":"true"
 
 }
 
@@ -54,7 +55,7 @@ Content-Type: application/json
     "repetoire":"Concert",
     "composer":"Verdi",
     "work":"Requiem",
-    "display_repetoire":true
+    "display_repetoire":"true"
   
 
 }
@@ -85,3 +86,47 @@ Content-Type: application/json
 
 GET http://localhost:3000/repertoire/concert
 Content-Type: application/json
+
+###
+
+POST http://localhost:3000/users/newuser 
+Content-Type: application/json
+
+{
+"userName":"seb", "password":"seb"
+}
+
+###
+
+POST http://localhost:3000/media/delete
+Content-Type: application/json
+
+{
+"_id":"63c011ffeff16ff625904f27"
+}
+
+###
+POST http://localhost:3000/media/change
+Content-Type: application/json
+
+{
+"_id": "63c02d92593279ff328d9235",
+"date_pub": "2023-02-27",
+"description": "AAAAA Croissant gingerbread gummi bears icing cookie croissant shortbread. Bonbon lollipop jujubes gingerbread bear claw bear claw muffin lollipop brownie.",
+"media_url": "AAAAhttps://www.youtube.com/embed/H-v8C991iAo",
+"title": "AAAAAA!Name of News, video or audio",
+"type": "Video",
+}
+
+###
+POST http://localhost:3000/repertoire/opera/change
+Content-Type: application/json
+
+{
+"_id": "63c67422746a08e086409905",
+"date_publish": "2023-02-27",
+"opera": "AAAAA Croissant gingerbread gummi bears icing cookie croissant shortbread. Bonbon lollipop jujubes gingerbread bear claw bear claw muffin lollipop brownie.",
+"role": "AAAAhttps://www.youtube.com/embed/H-v8C991iAo",
+"display_repetoire": "AAAAAA!Name of News, video or audio",
+"composer":"Ander"
+}

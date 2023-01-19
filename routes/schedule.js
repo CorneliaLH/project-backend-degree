@@ -58,6 +58,22 @@ router.get("/all", function (req, res, next) {
     });
 });
 
+router.get("/total", function (req, res, next) {
+  req.app.locals.db
+    .collection("schedule")
+    .find()
+    .toArray()
+    .then((results) => {
+      let sortedArray = results.sort(function compare(a, b) {
+        var dateA = new Date(a.date_remove);
+        var dateB = new Date(b.date_remove);
+        return dateA - dateB;
+      });
+
+      res.send(sortedArray);
+    });
+});
+
 //Create new schedule post
 router.post("/add", function (req, res) {
   req.app.locals.db
@@ -89,7 +105,7 @@ router.post("/add", function (req, res) {
             res.send(result);
           });
 
-        ////If scheduled post is a Concert, an opera-repetoire post is created
+        //If scheduled post is a Concert, an opera-repetoire post is created
       } else if (req.body.repetoire === "Concert") {
         req.app.locals.db
           .collection("repetoire_concert")
@@ -108,27 +124,62 @@ router.post("/add", function (req, res) {
     });
 });
 
-router.post("/delete", function (req, res) {
-  console.log(req.body);
+// router.post("/delete", function (req, res) {
+//   req.app.locals.db
+//     .collection("schedule")
+//     .deleteOne({ _id: ObjectId(req.body._id) })
+//     .then((result) => {
+//       console.log(result);
+//     });
+
+//   req.app.locals.db
+//     .collection("repetoire_opera")
+//     .deleteOne({ schedule_id: ObjectId(req.body._id) })
+//     .then((result) => {
+//       console.log(result);
+//     });
+//   req.app.locals.db
+//     .collection("repetoire_concert")
+//     .deleteOne({ schedule_id: ObjectId(req.body._id) })
+//     .then((result) => {
+//       console.log(result);
+//     });
+// });
+
+//Delete post
+router.post("/delete", function (req, res, next) {
   req.app.locals.db
     .collection("schedule")
     .deleteOne({ _id: ObjectId(req.body._id) })
     .then((result) => {
       console.log(result);
-    });
-
-  req.app.locals.db
-    .collection("repetoire_opera")
-    .deleteOne({ schedule_id: ObjectId(req.body._id) })
-    .then((result) => {
-      console.log(result);
-    });
-  req.app.locals.db
-    .collection("repetoire_concert")
-    .deleteOne({ schedule_id: ObjectId(req.body._id) })
-    .then((result) => {
-      console.log(result);
+      res.send(result);
     });
 });
 
+//Change post
+router.post("/change", function (req, res, next) {
+  console.log(req.body);
+  req.app.locals.db
+    .collection("schedule")
+    .updateMany(
+      {
+        _id: ObjectId(req.body.schedule._id),
+      },
+      {
+        $set: {
+          title: req.body.schedule.title,
+          when: req.body.schedule.when,
+          where: req.body.schedule.where,
+          media_url: req.body.schedule.media_url,
+          date_remove: req.body.schedule.date_remove,
+          conductor: req.body.schedule.conductor,
+        },
+      }
+    )
+    .then((result) => {
+      console.log(result);
+      res.send(result);
+    });
+});
 module.exports = router;
