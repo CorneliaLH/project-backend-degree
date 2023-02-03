@@ -6,8 +6,8 @@ This is the backend for a website presenting Tenor Joachim Bäckström's resume 
 
 ## Tech Stack
 
-**Client:** React, Scss
+**Client:** React, SCSS
 
 **Server:** Nodejs, Express
 
-\*\*Database: MongoDB Atlas
+**Database:** MongoDB Atlas
