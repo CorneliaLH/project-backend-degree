@@ -30,6 +30,7 @@ This is the backend for a website presenting Tenor Joachim Bäckström's resume 
 ## Start project
 
 npm install
+
 nodemon start
 
 ## Local server: http://localhost:3001/
