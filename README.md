@@ -4,7 +4,7 @@
 
 This is the backend for a website presenting Tenor Joachim Bäckström's resume and future.
 
-## Tech Stack project
+## Tech Stack whole project
 
 **Client:** React, SCSS
 
@@ -14,7 +14,8 @@ This is the backend for a website presenting Tenor Joachim Bäckström's resume 
 
 ## Tech Stack backend
 
-**Server:** Nodejs
+**Server:** Nodejs, Express
+
 **Npm-packages:**
 
 - cors
