@@ -1,4 +1,4 @@
-![Logo](./images/logo-dark2-readme.svg)
+![Logo](./src/images/logo-dark2-readme.svg)
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
@@ -14,7 +14,11 @@
 
 # Tenor Joachim Bäckström Backend
 
-This is the backend for a website presenting Tenor Joachim Bäckström's resume and future.
+Degree project for my Front End education course at Medieinstitutet.
+
+This is the frontend repo for a website presenting Tenor Joachim Bäckström's resume and future projects. Joachim has been working as a tenor for several years but has never had his own website. The goal with this project is that it hopefully widens his audience and gives them a more personal side of him.
+
+Frontend repo you find [here](https://github.com/CorneliaLH/project-frontend-degree/tree/main/joachim-backstrom-website)
 
 ## Tech Stack whole project
 
@@ -41,13 +45,21 @@ This is the backend for a website presenting Tenor Joachim Bäckström's resume 
 
 ## Application is run by:
 
-npm install
+**To clone project:**
 
-nodemon start
+_`git clone https://github.com/CorneliaLH/project-backend-degree.git`_
+
+**To install project:**
+
+_`npm install`_
+
+**To run project:**
+
+_`nodemon start`_
 
 ## Local server: http://localhost:3001/
 
-## Deployed:
+## Check out the deployed apps:
 
-- Frontend: https://project-frontend-degree.vercel.app/
-- Backend: https://degree-project-backe-end.onrender.com
+- [Frontend] (https://project-frontend-degree.vercel.app/)
+- [Backend] (https://degree-project-backe-end.onrender.com)
