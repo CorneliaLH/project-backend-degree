@@ -1,4 +1,4 @@
-![Logo](./images/logo-dark2.svg)
+![Logo](./images/logo-dark2-readme.svg)
 
 # Tenor Joachim Bäckström Backend
 
