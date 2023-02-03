@@ -61,5 +61,5 @@ _`nodemon start`_
 
 ## Check out the deployed apps:
 
-- [Frontend] (https://project-frontend-degree.vercel.app/)
-- [Backend] (https://degree-project-backe-end.onrender.com)
+- [Frontend](https://project-frontend-degree.vercel.app/)
+- [Backend](https://degree-project-backe-end.onrender.com)
