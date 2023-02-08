@@ -22,9 +22,12 @@ router.get("/", async function (req, res, next) {
             showArray.push(sortedArray[i]);
           }
         }
-        console.log(results);
-        throw new Error("Hello error!");
-        res.send(showArray);
+
+        res.send({
+          status: "error",
+          message: "Could not perform request",
+          data: { showArray },
+        });
       });
   } catch (error) {
     console.log(error);
@@ -44,7 +47,11 @@ router.get("/all", function (req, res, next) {
         return dateB - dateA;
       });
 
-      res.send(sortedArray);
+      res.json({
+        status: "200",
+        message: "Successful",
+        data: sortedArray,
+      });
     });
 });
 
