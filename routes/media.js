@@ -26,7 +26,7 @@ router.get("/", async function (req, res, next) {
         res.send({
           status: "error",
           message: "Could not perform request",
-          data: { showArray },
+          data: showArray,
         });
       });
   } catch (error) {
