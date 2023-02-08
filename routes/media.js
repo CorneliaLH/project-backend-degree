@@ -2,29 +2,34 @@ var express = require("express");
 var router = express.Router();
 var ObjectId = require("mongodb").ObjectID;
 
-//Get all media
-router.get("/", function (req, res, next) {
-  req.app.locals.db
-    .collection("media")
-    .find()
-    .toArray()
-    .then((results) => {
-      let showArray = [];
-      let sortedArray = results.sort(function compare(a, b) {
-        var dateA = new Date(a.date_pub);
-        var dateB = new Date(b.date_pub);
-        return dateB - dateA;
-      });
+//Get media
+router.get("/", async function (req, res, next) {
+  try {
+    await req.app.locals.db
+      .collection("media")
+      .find()
+      .toArray()
+      .then((results) => {
+        let showArray = [];
+        let sortedArray = results.sort(function compare(a, b) {
+          var dateA = new Date(a.date_pub);
+          var dateB = new Date(b.date_pub);
+          return dateB - dateA;
+        });
 
-      for (let i = 0; i < sortedArray.length; i++) {
-        if (showArray.length < 4) {
-          showArray.push(sortedArray[i]);
+        for (let i = 0; i < sortedArray.length; i++) {
+          if (showArray.length < 4) {
+            showArray.push(sortedArray[i]);
+          }
         }
-      }
-      console.log(results);
+        console.log(results);
 
-      res.send(showArray);
-    });
+        res.send(showArray);
+      });
+  } catch (error) {
+    console.log(error);
+    res.json({ status: "error", message: "Could not perform request" });
+  }
 });
 
 router.get("/all", function (req, res, next) {

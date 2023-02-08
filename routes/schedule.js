@@ -124,6 +124,9 @@ router.post("/add", function (req, res) {
     });
 });
 
+//Commented out code, this code when deleting a schedulepost it deletes matching repertoirepost automatically.
+//Kept it incase of future need.
+
 // router.post("/delete", function (req, res) {
 //   req.app.locals.db
 //     .collection("schedule")
