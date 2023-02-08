@@ -23,7 +23,6 @@ router.get("/", async function (req, res, next) {
           }
         }
         console.log(results);
-        // throw new Error("Hello Error!");
         res.send(showArray);
       });
   } catch (error) {
@@ -208,7 +207,6 @@ router.post("/add", async function (req, res, next) {
       .insertOne(req.body)
       .then((result) => {
         console.log(result);
-
         res.send(result);
       });
   } catch (error) {
@@ -225,6 +223,7 @@ router.post("/delete", async function (req, res, next) {
       .deleteOne({ _id: ObjectId(req.body._id) })
       .then((result) => {
         console.log(result);
+
         res.send(result);
       });
   } catch (error) {
