@@ -22,7 +22,7 @@ MongoClient.connect(
     useUnifiedTopology: true,
   }
 ).then((client) => {
-  console.log("Vi är uppkopplade mot databasen!");
+  console.log("Connected to the database!");
 
   const db = client.db("degreeProjectJoachim");
   app.locals.db = db;
