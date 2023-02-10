@@ -16,7 +16,7 @@
 
 Degree project for my Front End education course at Medieinstitutet.
 
-This is the frontend repo for a website presenting Tenor Joachim Bäckström's resume and future projects. Joachim has been working as a tenor for several years but has never had his own website. The goal with this project is that it hopefully widens his audience and gives them a more personal side of him.
+This is the backend repo for a website presenting Tenor Joachim Bäckström's resume and future projects. Joachim has been working as a tenor for several years but has never had his own website. The goal with this project is that it hopefully widens his audience and gives them a more personal side of him.
 
 Frontend repo you find [here](https://github.com/CorneliaLH/project-frontend-degree/tree/main/joachim-backstrom-website)
 
